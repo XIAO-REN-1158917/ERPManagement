@@ -1,6 +1,9 @@
+//To avoid WebPack path resolution errors, import images as modules.
+//Another approach is to use absolute paths.
 import logo from "../../assets/logo.png"
 import bg from "../../assets/bg.jpg"
 import lgbg from "../../assets/lgbg.jpg"
+
 import "./index.scss"
 import { Button, Form, Input } from "antd"
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
@@ -12,7 +15,8 @@ import { useState } from "react"
 
 function Login() {
     //instances
-    const [form] = Form.useForm()
+    const [form] = Form.useForm()//Generate a form instance and assign it to the Form component below, 
+    // enabling the use of built-in methods in the AntD component, such as form.validateFields().
     const [loading, setLoading] = useState<boolean>(false)
     const dispatch = useDispatch()
     const navigate = useNavigate()

@@ -1,8 +1,16 @@
-### This project was bootstrapped with [Create React App]
+# React-TypeScript Front-end Project Demo
 
+## Overview
 
+This is a frontend demo project developed using the React framework and TypeScript, showcasing my understanding of React and related frontend technologies. I hope it helps you gain a quick insight into my skills.
 
-StaticWeb: <https://lively-coast-0d2577600.4.azurestaticapps.net>
+The project simulates a commercial park management system, or more specifically, a property management system. It includes features such as tenant management, maintenance requests, financial management, equipment tracking, and daily operations.
+
+If this happens to align with your current requirements, that's fantastic! If not, I'm confident that the technologies and approaches demonstrated here can be applied to any project you need.
+
+Feel free to explore my app, and I'm happy to discuss further if you'd like to learn more!
+
+**StaticWeb:** <https://lively-coast-0d2577600.4.azurestaticapps.net>
 
 | Username | Password      |
 | -------- | ------------- |
@@ -10,30 +18,52 @@ StaticWeb: <https://lively-coast-0d2577600.4.azurestaticapps.net>
 | manager  | manager123123 |
 | admin    | admin123123   |
 
-Tech-Stack: React18, Redux(RTK), react-router , TypeScript, antd , scss, webpack, echarts
+PS: Regarding TypeScript, I believe it is designed to enhance development efficiency by adding types to areas such as front-end and back-end data interactions or other error-prone parts, rather than enforcing type definitions for everything. If all values and components are strictly typed, it could actually increase development costs instead.
+
+**NOTE: This demo is also a record of my own learning, so the comments in the code contain many of my personal notes and do not reflect the commenting style typically used in a real work environment.**
+
+## Project Highlights: 
+
+- **User Access Management:**Implemented user permission control and dynamic management.
+- **Higher-Order Components**:Created higher-order components for button access control.
+- **Performance Optimization**:Optimized performance with lazy loading, useMemo, and useCallback.
+- **Excel Export Plugin**: Developed a plugin for exporting Excel files locally with cross-page data selection.
+- **List Caching**: Implemented intelligent list caching with conditional adjustments.
+- **Reusable Components**: Built reusablecomponents to enhance development efficiency.
+- **Data Visualization**: Integrated EChartsto deliver interactive and visually appealing analytics.
+- **Advanced Techniques**: Addressed projectchallenges using recursion and higher-order components.
 
 
 
-Project Highlights: 
+## Project Structure
 
-Implemented user permission control and dynamicmanagement.
+### api
 
-Created higher-order components for button access control.
+This folder is used to centralise the management of request methods, making the code clearer and aligns with enterprise-level development practices.
 
-Optimized performance with lazy loading, useMemo,and useCallback.
+In this way, all requests in the project can directly call these methods. If needed, you can simply pass in the parameters without having to write a complete axios request.
 
-Developed a plugin for exporting Excel fileslocally with cross-page data selection.
+### mock
 
-Managed list caching, adjusting based onconditions.
+Simulate backend APIs and generate random data.
 
-Built reusable components (Axios wrapper, customhooks) to enhance development efficiency.
+### page
 
-Leveraged ECharts for data visualization.
+This is where all the page components and styles are stored. The styles use SASS, allowing for modular styling to avoid style conflicts and making component management more efficient.
 
-Addressed project challenges using recursion andhigher-order components.
-
-
+-login: login page component and style file
 
 
 
+### router
 
+The `router` folder manages the application's routing configuration, defining the paths and associated components for different views. It utilises `react-router-dom` for routing and supports features such as lazy loading and route protection to optimise performance and enhance security.
+
+This folder includes:
+
+- **Definition of fixed routes:** Handles main navigation routes like home, login, and error pages.
+- **Dynamic route mapping:** Maps additional paths to their respective components dynamically for better scalability.
+
+### utils
+
+Used to store custom utilities and plugins.

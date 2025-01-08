@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 
 export const authSlice = createSlice({
     name: "auth",
@@ -22,5 +21,15 @@ export const authSlice = createSlice({
     }
 })
 
+//setToken, clearToken and setMenu are action creators
+//It can generate the corresponding action based on the given parameters,
+// locate the appropriate slice and reducer, and trigger it using dispatch.
+// For example: 
+// dispatch(setToken("newToken"))
+// const action = setToken("newToken")
+// action = {
+//    type:"auth/setToken",
+//    payload:"newToken"
+//}
 export const { setToken, clearToken, setMenu } = authSlice.actions
 export default authSlice.reducer

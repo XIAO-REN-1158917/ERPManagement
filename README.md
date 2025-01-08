@@ -43,9 +43,19 @@ This folder is used to centralise the management of request methods, making the 
 
 In this way, all requests in the project can directly call these methods. If needed, you can simply pass in the parameters without having to write a complete axios request.
 
+### assets
+
+Static files, such as images.
+
+### components
+
+This is the shared layout component of the page, such as the sidebar, header, etc.
+
 ### mock
 
 Simulate backend APIs and generate random data.
+
+The username and password validation here, as well as the simulated token and data, are implemented in the simplest way, merely to mimic the backend. This is not the actual API logic.
 
 ### page
 
@@ -63,6 +73,10 @@ This folder includes:
 
 - **Definition of fixed routes:** Handles main navigation routes like home, login, and error pages.
 - **Dynamic route mapping:** Maps additional paths to their respective components dynamically for better scalability.
+
+### store
+
+This section contains Redux-related content, manages slices for different modules, and registers them in Redux.
 
 ### utils
 

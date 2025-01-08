@@ -406,6 +406,8 @@ const customizeMenuList = [
 
 //menu interface
 Mock.mock('https://www.demo.com/menu', "get", (options: any) => {
+    //This is a simplified handling of a mock API; 
+    // the actual backend will not retrieve the token from local storage.
     const token = sessionStorage.getItem("token");
     if (token == "mocktoken123456admin") {
         return {

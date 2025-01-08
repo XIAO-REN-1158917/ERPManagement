@@ -21,6 +21,9 @@ import {
     ThunderboltOutlined,
     TeamOutlined
 } from '@ant-design/icons';
+
+//The Icon data returned from the backend is a string. 
+// We use this reference table to "convert" the string into a component.
 const icons: any = {
     DashboardOutlined: <DashboardOutlined />,
     UserOutlined: <UserOutlined />,

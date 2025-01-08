@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import "./index.scss"
 import { useNavigate, useLocation } from 'react-router-dom';
 
+// This is the type we need, where icon is a component. Save this is Redux.
 interface MenuItem {
     key: string,
     label: string,
@@ -13,6 +14,8 @@ interface MenuItem {
     children?: MenuItem[]
 }
 
+// This is type returned by the backend, where icon is a string. 
+// Needs to be mapped to MenuItem 
 interface MenuItemFromData {
     key: string,
     label: string,
@@ -35,6 +38,7 @@ function NavLeft() {
         const mappedMenuItems: MenuItem[] = mapMenuItems(menuList)
         setMenuData(mappedMenuItems)
     }
+
     // format data from backend, because of the icon, we need component, not string
     function mapMenuItems(items: MenuItemFromData[]): any {
         return items.map((item: MenuItemFromData) => ({

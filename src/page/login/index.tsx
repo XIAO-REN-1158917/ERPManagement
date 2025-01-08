@@ -15,11 +15,20 @@ import { useState } from "react"
 
 function Login() {
     //instances
-    const [form] = Form.useForm()//Generate a form instance and assign it to the Form component below, 
+
+    //Generate a form instance and assign it to the Form component below,
     // enabling the use of built-in methods in the AntD component, such as form.validateFields().
+    const [form] = Form.useForm()
+
+    //Add an animation effect to the login button. 
+    // When clicked, a loading animation appears (true), and it is removed (false) after login is complete.
     const [loading, setLoading] = useState<boolean>(false)
+
+    // Retrieve the dispatch from React-Redux's context
     const dispatch = useDispatch()
+
     const navigate = useNavigate()
+
     //click login button will call this function
     function handleLogin() {
         form.validateFields().then(async (res) => {
@@ -29,6 +38,7 @@ function Login() {
             dispatch(setToken(token))
             sessionStorage.setItem("username", username)
             sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
+            //Delete the record; clicking "Back" will not return to the previous page.
             navigate("/", { replace: true })
         }).catch((err) => {
             setLoading(false)

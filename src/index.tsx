@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement //Type assertion to avoid errors.
 );
 root.render(
+    // Provider - Share state/data from Redux in the App
     <Provider store={store}>
         <App />
     </Provider>

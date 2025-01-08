@@ -16,6 +16,8 @@ export function login(data: LoginData) {
 }
 
 export function getMenu() {
+    //The token is added to the request header in the request interceptor, 
+    // so there's no need to include it as a parameter here.
     return get("/menu")
 }
 

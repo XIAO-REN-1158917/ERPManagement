@@ -20,20 +20,27 @@ function App() {
             if (data.length) {
                 dispatch(setMenu(data))
                 const routersDynamic = generateRouters(data)//generate router tree dynamicly
+
                 // the router tree is childre of "/"
+                //This approach combiens the dynamically generated routes with fixed route "/"/
+                // to form a complete route tree.
                 const myRouters = [...routersFixed]
                 myRouters[0].children = routersDynamic
+
                 // set a default
                 myRouters[0].children[0].index = true
                 const routerTree = createBrowserRouter(myRouters)
+
                 //send router object to state
                 setRouterTree(routerTree)
             } else {
+                //If the user is not logged in, provide a route to the login page.
                 const routerTree = createBrowserRouter(routersFixed)
                 setRouterTree(routerTree)
             }
         }
         loadData()
+        //When the user's login status changes, make a new request.
     }, [token])
 
     if (routerTree) {

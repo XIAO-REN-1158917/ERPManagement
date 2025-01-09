@@ -36,6 +36,8 @@ function Login() {
             const { data: { token, username, btnAuth } } = await login(res)
             setLoading(false)
             dispatch(setToken(token))
+            //THis is a simplified approach, considering that the username is not frenquently used
+            //when a token is available
             sessionStorage.setItem("username", username)
             sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
             //Delete the record; clicking "Back" will not return to the previous page.

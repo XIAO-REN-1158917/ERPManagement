@@ -1,5 +1,7 @@
-
 import { lazy } from "react"
+
+//This ia a mapping table of URL addresses and their corresponding page components.
+//It is used to match route with their respective components when dynamically generating routes.
 const Dashboard = lazy(() => import("../page/dashboard"))
 const UserList = lazy(() => import('../page/users'));
 const AddUser = lazy(() => import("../page/users/addUser"));

@@ -1,3 +1,4 @@
+// The data type returned by the back-end
 export interface DataType {
     id: string,
     name: string,

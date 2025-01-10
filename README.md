@@ -59,9 +59,15 @@ The username and password validation here, as well as the simulated token and da
 
 ### page
 
-This is where all the page components and styles are stored. The styles use SASS, allowing for modular styling to avoid style conflicts and making component management more efficient.
+This is where all the page components, styles and related files are stored. The styles use SASS, allowing for modular styling to avoid style conflicts and making component management more efficient.
+
+-dashboard: index page
+
+-home: layout page
 
 -login: login page component and style file
+
+-users: Components and interfaces related to tenant management.
 
 
 

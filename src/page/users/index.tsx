@@ -30,7 +30,7 @@ function Users() {
         reset
     } = useDataList<SearchType, DataType>({ companyName: "", contact: "", phone: "" }, getUserList)
 
-    //The original writing is kept here to compare before and after using custom encapsulation hooks
+    //The original code is kept here to compare before and after using custom encapsulation hooks
 
     // const [dataList, setDataList] = useState<DataType[]>([])
     // const [page, setPage] = useState<number>(1)

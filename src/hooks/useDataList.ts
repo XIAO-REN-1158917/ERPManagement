@@ -34,6 +34,7 @@ function useDataList<T extends MyFormData, U>(initialFormData: T, fetchData: Dat
         loadData()
     }, [loadData])
 
+    //Differentiate input fields by their name and then update the corresponding value.
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData(prevState => ({

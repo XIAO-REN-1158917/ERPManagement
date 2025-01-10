@@ -1,12 +1,15 @@
 import { Row, Col, Card, Progress, Statistic, Timeline, Tag } from "antd"
 import { RadarChartOutlined, SnippetsOutlined, DollarOutlined, LaptopOutlined } from "@ant-design/icons"
+// npm install echart echart-for-react --save
+// echart-for-react encapsulate sonme method to adapt ECharts for React.
 import ReactECharts from "echarts-for-react"
 import { getEnergyData } from "../../api/dashboard"
 import { useEffect, useState } from "react"
 import "./index.scss"
 
-//There are 3 echarts, the first one fetch data from api, two others use static data
-// static data fro echart
+//There are 3 echarts, the first one fetch data from api.(This demonstrates that I know how to call API)
+// two others use static data (Since just mock data and logic is the same, not necessary to repeat.)
+// static mock data for echart
 const option2 = {
     title: {
         text: 'Form'

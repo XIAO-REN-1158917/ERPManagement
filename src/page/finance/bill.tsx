@@ -204,7 +204,7 @@ function Bill() {
     }
     // follow the row selected
     const onSelectChange = (selectedRowKeys: React.Key[], selectedRows: any) => {
-        console.log(selectedRowKeys)
+        //console.log(selectedRowKeys)
         setSelectedRowkeys(selectedRowKeys)
         setSelectedRows(selectedRows)
     }
@@ -212,12 +212,17 @@ function Bill() {
     const rowSelection = {
         selectedRowkeys,
         onChange: onSelectChange,
-        preserveSelectedRowKeys: true//will sava the selected row keys and data
+
+        //will sava the selected row keys and data when paginating
+        preserveSelectedRowKeys: true
     }
+
     // handle buttons - export to excel and batch void
+    // Enable the buttons only when there are selected rows.
     const disabled = useMemo(() => {
         return selectedRowkeys.length ? false : true
     }, [selectedRowkeys])
+
     // columns of excel sheet
     const header = ["accountNo", "status", 'roomNo', 'carNo', 'tel', 'costName1', 'costName2', 'costName3', 'startDate', 'endDate', 'preferential', 'money', 'pay']
 

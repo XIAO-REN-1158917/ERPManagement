@@ -67,8 +67,10 @@ function Users() {
     const onSelectChange = (selectedRowKeys: React.Key[]) => {
         setSelectedRowKeys(selectedRowKeys)
     }
+
+    // Configure according to the Ant Design documentation.
     const rowSelection = {
-        selectedRowKeys,
+        selectedRowKeys, // selectedRowKeys:selectedRowKeys
         onChange: onSelectChange
     }
     // configuration (call back) of changing the page and page size
@@ -284,5 +286,8 @@ function Users() {
         </Card>
     </div>
 }
+
+// When the parent component updates state data unrelated to the child component,
+// the child component should avoid unnecessary re-renders.
 const MyUserForm = React.memo(UserForm)
 export default Users

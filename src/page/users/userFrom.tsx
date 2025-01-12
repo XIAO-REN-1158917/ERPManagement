@@ -9,6 +9,8 @@ interface FormProps {
     title: string,
     loadData: () => void
 }
+
+// This component is used for adding and editing users.
 function UserForm(props: FormProps) {
     const [form] = Form.useForm()
     const { visible, hideModal, title, loadData } = props

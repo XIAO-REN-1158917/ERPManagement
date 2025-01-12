@@ -2,6 +2,8 @@
 
 ## Overview
 
+First, a warm welcome and thank your for taking the time to review my project.
+
 This is a frontend demo project developed using the React framework and TypeScript, showcasing my understanding of React and related frontend technologies. I hope it helps you gain a quick insight into my skills.
 
 The project simulates a commercial park management system, or more specifically, a property management system. It includes features such as tenant management, maintenance requests, financial management, equipment tracking, and daily operations.
@@ -20,7 +22,15 @@ Feel free to explore my app, and I'm happy to discuss further if you'd like to l
 
 PS: Regarding TypeScript, I believe it is designed to enhance development efficiency by adding types to areas such as front-end and back-end data interactions or other error-prone parts, rather than enforcing type definitions for everything. If all values and components are strictly typed, it could actually increase development costs instead.
 
-**NOTE: This demo is also a record of my own learning, so the comments in the code contain many of my personal notes and do not reflect the commenting style typically used in a real work environment.**
+**NOTE: **
+
+**1. This demo is also a record of my own learning, so the comments in the code contain many of my personal notes and do not reflect the commenting style typically used in a real work environment.**
+
+**2. The project uses the Ant Design UI component library. If your team uses others libraries such as Material-UI, Chakra UI or React Bootstrap, etc. I am confident that I can quickly adapt to and utilise them with the same logic.**
+
+**3. The project uses Mock.js to simulate backend APIs, and all data is randomly generated without persistence. As a result, during operation such as deleting users or pagination, you will only see changes in the data rather than real effects (since all data is regenerated each time).**
+
+**4. When demonstrating the functionality of sending request to the backend in the project, the same logic is demonstrate only once, while other cases use static mock data. This simplifies the process and reduces the need for unnecessary work in coding mock APIs.**
 
 ## Project Highlights: 
 

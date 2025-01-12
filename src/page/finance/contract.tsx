@@ -29,7 +29,10 @@ function Contract() {
     const navigate = useNavigate()
     const { data, total, formList, current, size } = useSelector((state: any) => state.contractSlice)
     const [searchParams] = useSearchParams()
+
+    // This flag if used to determine whether the user is returning from the detail page.
     const isReturn = searchParams.get("return")
+
     const [page, setPage] = useState<number>(1)
     const [pageSize, setPageSize] = useState<number>(10)
     const [loading, setLoading] = useState<boolean>(false)
@@ -41,7 +44,7 @@ function Contract() {
     })
 
 
-
+    // Record content of search input box
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target
         setFormData(prevState => ({
@@ -55,6 +58,7 @@ function Contract() {
 
     }
 
+    // Trrigered when paginating or changeing the page size
     const onChange: PaginationProps["onChange"] = (page, pageSize) => {
         setPage(page)
         setPageSize(pageSize)
@@ -63,11 +67,12 @@ function Contract() {
         loadData(page, pageSize)
     }
 
+    // Click "Detail" button
     const detail = (contractNo: string) => {
         navigate("/finance/surrender?contractNo=" + contractNo)
     }
 
-    // columns of table
+    // columns(configuration) of table
     const columns: TableProps<DataType>["columns"] = [
         {
             title: "No.",
@@ -140,6 +145,7 @@ function Contract() {
         }
     ]
 
+    // Request data
     const loadData = async (page: number, pageSize: number) => {
         setLoading(true)
         const { data: { list, total } } = await getContractList({ ...formData, page, pageSize })
@@ -148,6 +154,7 @@ function Contract() {
         dispatch(setTotal(total))
     }
 
+    // Reset to the initial state of the page
     const reset = () => {
         setFormData({
             contractNo: "",
@@ -160,10 +167,15 @@ function Contract() {
     }
 
     useEffect(() => {
+        //If the user is NOT returning form the detail page
+        // or there is no data in Redux,
+        // the data needs to be loaded.
         if (!isReturn || !data.length) {
             loadData(page, pageSize)
         }
         if (isReturn) {
+            //If returning from the detail page, load the data form Redux
+            // to maintain page consistency and enhance the UX.
             setFormData(formList)
             setPage(current)
             setPageSize(size)

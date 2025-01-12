@@ -32,6 +32,8 @@ PS: Regarding TypeScript, I believe it is designed to enhance development effici
 
 **4. When demonstrating the functionality of sending request to the backend in the project, the same logic is demonstrate only once, while other cases use static mock data. This simplifies the process and reduces the need for unnecessary work in coding mock APIs.**
 
+**5. I will periodically review and continue developing this project, so some pages contain unused references (please just ignore them).**
+
 ## Project Highlights: 
 
 - **User Access Management:**Implemented user permission control and dynamic management.

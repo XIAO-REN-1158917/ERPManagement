@@ -28,6 +28,7 @@ interface SearchType {
     accountName: string
 }
 
+//static mock data
 const treeData: TreeDataNode[] = [
     {
         title: 'Dashboard',
@@ -122,7 +123,7 @@ const treeData: TreeDataNode[] = [
     },
 ]
 
-
+// Retrieve the user's current permissions(accessible routes)
 const extractTreeKeys = (data: any) => {
     let keys: string[] = []
     data.forEach((item: any) => {

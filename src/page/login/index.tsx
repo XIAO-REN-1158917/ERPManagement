@@ -36,10 +36,16 @@ function Login() {
             const { data: { token, username, btnAuth } } = await login(res)
             setLoading(false)
             dispatch(setToken(token))
-            //THis is a simplified approach, considering that the username is not frenquently used
+
+            //This is a simplified approach, considering that the username is not frenquently used
             //when a token is available
             sessionStorage.setItem("username", username)
+
+            // Storing button permission info locally poses a risk.
+            // One solution is for the backend to validate the permission info in the token upon receiving a request.
+            // If it does not match the required permission for the request, an error is returned.
             sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
+
             //Delete the record; clicking "Back" will not return to the previous page.
             navigate("/", { replace: true })
         }).catch((err) => {

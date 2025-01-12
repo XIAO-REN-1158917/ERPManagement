@@ -98,4 +98,4 @@ This section contains Redux-related content, manages slices for different module
 
 ### utils
 
-Used to store custom utilities and plugins.
+Used to store custom utilities and plugins. This file includes a custom-wrapped Axios request utility, a tool for generating route trees, a higher-order component for button control, and a utility for exporting Excel files, etc.

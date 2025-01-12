@@ -142,6 +142,9 @@ function Settings() {
     const [accountName, setAccountName] = useState<string>("Current")
     const { menuList } = useSelector((state: any) => state.authSlice)
     const { dataList, page, pageSize, total, loading, formData, setDataList, setPage, setPageSize, setTotal, setLoading, setFormData, loadData, onChange, handleChange, reset } = useDataList<SearchType, DataType>({ accountName: "" }, getAccountList)
+
+    //Here, any is used to represent the type of the component's props, because the properties of the button
+    // cannot be determined. This ensures flexbility and extensibility.
     const AuthButton: React.FC<any> = withPermissions(['delete'], JSON.parse(sessionStorage.getItem("btnAuth") as string))(Button)
 
 

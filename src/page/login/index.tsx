@@ -69,7 +69,10 @@ function Login() {
                 >
                     <Form.Item
                         name="username"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[
+                            { required: true, message: 'Please input your username!' }
+                            // We can use pattern:/rege/ to create a customized validation.
+                        ]}
                     >
                         <Input prefix={<UserOutlined />} placeholder="Please input your username" />
                     </Form.Item>

@@ -40,7 +40,7 @@ function App() {
             }
         }
         loadData()
-        //When the user's login status changes, make a new request.
+        //When the user's login status changes, send a new request.
     }, [token])
 
     if (routerTree) {

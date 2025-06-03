@@ -18,6 +18,7 @@ interface Iprops {
 //const children = props.children;
 //}
 //Writing it this way would be more cumbersome.
+// Recall: children - keyword, refers to the content inside the component.
 function RequireAuth({ allowed, redirectTo, children }: Iprops) {
     const { token } = useSelector((state: any) => state.authSlice)
     const isLogin = token ? true : false

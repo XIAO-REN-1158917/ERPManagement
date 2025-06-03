@@ -34,6 +34,7 @@ function NavLeft() {
     useEffect(() => {
         configMenu()
     }, [menuList])
+
     async function configMenu() {
         const mappedMenuItems: MenuItem[] = mapMenuItems(menuList)
         setMenuData(mappedMenuItems)

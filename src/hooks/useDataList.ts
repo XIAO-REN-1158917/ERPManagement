@@ -7,7 +7,7 @@ type MyFormData = {
 
 // page and pageSize are always needed
 // The FormData type for each table is different, so T
-// & is used to denote a union type annotation.
+// & is used to denote an intersection type annotation.
 interface DataFetcher<T> {
     (args: T & { page: number, pageSize: number }): Promise<any>
 }

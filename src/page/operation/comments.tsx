@@ -1,6 +1,7 @@
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { Avatar, List, Space, Card } from 'antd';
 import React from 'react';
+
 const data = Array.from({ length: 23 }).map((_, i) => ({
     href: '#',
     title: `Comprehensive ${i}`,
@@ -17,6 +18,7 @@ const IconText = ({ icon, text }: { icon: React.FC; text: string }) => (
         {text}
     </Space>
 );
+
 export default function Comments() {
     return <div>
         <Card>

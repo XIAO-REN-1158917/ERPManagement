@@ -1,5 +1,4 @@
 import { Card, Row, Col, Table, Input, Button, Pagination, Popconfirm, Tree } from "antd"
-import type { TableProps } from "antd";
 import { getAccountList } from "../../api/users";
 import useDataList from "../../hooks/useDataList";
 import type { TreeDataNode, TreeProps } from 'antd';
@@ -13,7 +12,6 @@ interface MenuType {
     key: string;
     children?: MenuType[]
 }
-
 
 interface DataType {
     id: number;
@@ -39,7 +37,6 @@ const treeData: TreeDataNode[] = [
         key: '/users',
         children: [
             { title: 'User List', key: '/users/list' },
-            // { title: 'New User', key: '/users/add' },
         ],
     },
     {
@@ -73,10 +70,6 @@ const treeData: TreeDataNode[] = [
                 title: "Contract",
                 key: "/finance/contract"
             },
-            // {
-            //     title: "Surrender",
-            //     key: "/finance/surrender"
-            // },
             {
                 title: "Bill",
                 key: "/finance/bill"
@@ -138,16 +131,28 @@ const extractTreeKeys = (data: any) => {
 }
 
 function Settings() {
+    // React.Key is a predefined type that includes both string and number.
+    // Although checkedKeys currently uses string value, React.Key is used here for future flexibility
+    // in case numeric keys are introduced later.
     const [checkedKeys, setCheckedKeys] = useState<React.Key[]>([])
     const [accountName, setAccountName] = useState<string>("Current")
     const { menuList } = useSelector((state: any) => state.authSlice)
-    const { dataList, page, pageSize, total, loading, formData, setDataList, setPage, setPageSize, setTotal, setLoading, setFormData, loadData, onChange, handleChange, reset } = useDataList<SearchType, DataType>({ accountName: "" }, getAccountList)
+    const {
+        dataList,
+        page,
+        pageSize,
+        total,
+        loading,
+        formData,
+        onChange,
+        handleChange } = useDataList<SearchType, DataType>({ accountName: "" }, getAccountList)
 
     //Here, any is used to represent the type of the component's props, because the properties of the button
-    // cannot be determined. This ensures flexbility and extensibility.
+    // cannot be determined (third-party UI library). This ensures flexbility and extensibility.
     const AuthButton: React.FC<any> = withPermissions(['delete'], JSON.parse(sessionStorage.getItem("btnAuth") as string))(Button)
 
-
+    // Send the update permissions and accountname to the backend
+    // Smiplified here: printing the data to the console.
     const handle = () => {
         console.log(checkedKeys, accountName)
     }
@@ -211,6 +216,7 @@ function Settings() {
         }
     ]
 
+    // Update the checked keys as a whole instead of adding or removing individual keys.
     const onCheck: TreeProps["onCheck"] = (checkedKeys) => {
         setCheckedKeys(checkedKeys as React.Key[])
     }
@@ -218,6 +224,7 @@ function Settings() {
     useEffect(() => {
         setCheckedKeys(extractTreeKeys(menuList))
     }, [])
+
     return <div>
         <Card>
             <Row gutter={16}>

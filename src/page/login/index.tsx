@@ -44,6 +44,7 @@ function Login() {
             // Storing button permission info locally poses a risk.
             // One solution is for the backend to validate the permission info in the token upon receiving a request.
             // If it does not match the required permission for the request, an error is returned.
+            // Or store button permission in Rudux and reload on refresh to prevent data loss.
             sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
 
             //Delete the record; clicking "Back" will not return to the previous page.

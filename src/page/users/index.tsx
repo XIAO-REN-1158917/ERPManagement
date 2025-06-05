@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import { Button, Card, Col, Input, Row, Table, Pagination, Tag, Popconfirm, message } from "antd"
-import type { PaginationProps } from 'antd';
 import { useEffect, useMemo, useState } from "react"
 import type { TableProps } from "antd"
 import type { DataType } from "./interface"

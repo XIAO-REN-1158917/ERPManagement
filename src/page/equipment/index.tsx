@@ -2,7 +2,6 @@ import { Card, Row, Col, Table, Input, Button, Pagination, Tag } from "antd"
 import type { TableProps } from "antd"
 import useDataList from "../../hooks/useDataList"
 import { getEquipmentList } from "../../api/equipment"
-import { forwardRef } from "react";
 
 interface SearchType {
     name: string;
@@ -105,15 +104,10 @@ function Equipment() {
         total,
         loading,
         formData,
-        setDataList,
-        setPage,
-        setPageSize,
-        setTotal,
-        setLoading,
-        setFormData,
         loadData,
         onChange,
-        handleChange, reset
+        handleChange,
+        reset
     } = useDataList<SearchType, DataType>({ name: "", person: "" }, getEquipmentList)
 
     return <div>

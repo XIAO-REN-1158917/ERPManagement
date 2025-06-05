@@ -1,6 +1,11 @@
 import * as XLSX from "xlsx"
 import { saveAs } from "file-saver"
 
+// NOTE:
+// Enter the following command in the terminal
+// npm install xlsx file-saver
+// (Type declaration file)
+// npm i --save-dev @type/file-saver
 
 
 export function exportToExcel(data: any, header: string[]) {

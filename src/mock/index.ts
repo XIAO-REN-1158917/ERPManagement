@@ -14,6 +14,7 @@ Mock.mock("https://www.demo.com/login", "post", (options: any) => {
             data: {
                 username: "admin",
                 token: "mocktoken123456admin",
+                // Used for auth control on the button level.
                 btnAuth: ["add", "edit", "delete"]
             }
         }

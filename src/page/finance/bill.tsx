@@ -157,7 +157,9 @@ function Bill() {
     const [total, setTotal] = useState<number>(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [selectedRowkeys, setSelectedRowkeys] = useState<React.Key[]>([])
+    // Set the type to 'any' here to align with the third-party plugin and avoid unnecessary type restrictions.
     const [selectedRows, setSelectedRows] = useState<any>({ accountNo: "" })
+
     // when the date changed
     const handleChange = (value: any, dateString: any) => {
         console.log(value, dateString)
@@ -166,6 +168,7 @@ function Bill() {
             date: dateString
         }))
     }
+
     //when the room/car changed
     const handleChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target
@@ -174,6 +177,7 @@ function Bill() {
             no: value
         }))
     }
+
     //when the state of payment changed
     const handleChange2 = (value: string) => {
         setFormData(prevState => ({
@@ -181,11 +185,13 @@ function Bill() {
             status: value
         }))
     }
+
     //when the page or pageSize changed
     const onChange = (page: number, pageSize: number) => {
         setPage(page)
         setPageSize(pageSize)
     }
+
     //send request and fetch the bill list data
     const loadData = async () => {
         setLoading(true)
@@ -202,6 +208,7 @@ function Bill() {
         setDataList(list)
         setTotal(total)
     }
+
     // follow the row selected
     const onSelectChange = (selectedRowKeys: React.Key[], selectedRows: any) => {
         //console.log(selectedRowKeys)
@@ -212,7 +219,6 @@ function Bill() {
     const rowSelection = {
         selectedRowkeys,
         onChange: onSelectChange,
-
         //will sava the selected row keys and data when paginating
         preserveSelectedRowKeys: true
     }
@@ -229,6 +235,7 @@ function Bill() {
     useEffect(() => {
         loadData()
     }, [page, pageSize])
+
     return <div>
         <Card>
             <Row gutter={16}>

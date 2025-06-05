@@ -44,6 +44,7 @@ function Login() {
             // Storing button permission info locally poses a risk.
             // One solution is for the backend to validate the permission info in the token upon receiving a request.
             // If it does not match the required permission for the request, an error is returned.
+            // Or store button permission in Rudux and reload on refresh to prevent data loss.
             sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
 
             //Delete the record; clicking "Back" will not return to the previous page.
@@ -69,7 +70,10 @@ function Login() {
                 >
                     <Form.Item
                         name="username"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[
+                            { required: true, message: 'Please input your username!' }
+                            // We can use pattern:/rege/ to create a customized validation.
+                        ]}
                     >
                         <Input prefix={<UserOutlined />} placeholder="Please input your username" />
                     </Form.Item>

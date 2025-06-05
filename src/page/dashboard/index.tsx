@@ -7,7 +7,7 @@ import { getEnergyData } from "../../api/dashboard"
 import { useEffect, useState } from "react"
 import "./index.scss"
 
-//There are 3 echarts, the first one fetch data from api.(This demonstrates that I know how to call API)
+//There are 3 echarts, the first one fetch data from api.
 // two others use static data (Since just mock data and logic is the same, not necessary to repeat.)
 // static mock data for echart
 const option2 = {

@@ -33,6 +33,7 @@ function NavLeft() {
 
     useEffect(() => {
         configMenu()
+        // console.log("menulist:",menuList)
     }, [menuList])
 
     async function configMenu() {

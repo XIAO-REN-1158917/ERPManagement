@@ -118,7 +118,7 @@ function Surrender() {
     const navigate = useNavigate()
     return <div>
         <Card>
-            <Button type="primary" onClick={() => navigate("/finance/contract?return=ture")}>
+            <Button type="primary" onClick={() => navigate("/finance/contract?return=true")}>
                 Back
             </Button>
         </Card>

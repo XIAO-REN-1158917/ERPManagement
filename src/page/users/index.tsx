@@ -271,6 +271,7 @@ function Users() {
                 dataSource={dataList}
                 loading={loading}
                 pagination={false}
+                scroll={{ x: 'max-content' }}
             />
             <Pagination
                 className="fr mt"

@@ -58,7 +58,7 @@ function Contract() {
 
     }
 
-    // Trrigered when paginating or changeing the page size
+    // Callback invoked when the page or page size changes.
     const onChange: PaginationProps["onChange"] = (page, pageSize) => {
         setPage(page)
         setPageSize(pageSize)
